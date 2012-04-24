@@ -1,6 +1,28 @@
 require "rubygems"
 require "bundler/setup"
-require "vineyard"
+
+
+
+class LogDemoTask < Vineyard::Task
+
+    def do_work
+      puts "LogDemoTask [develop]: this is a puts line. STARTING..."
+
+      log << "LogDemoTask [develop]: this is a log line"
+      heartbeat
+
+      warn "LogDemoTask: this is a warn line"
+
+      10.times do |i|
+        sleep 3
+        log << "LogDemoTask v14[develop]: log loop # #{i}"
+        heartbeat
+      end
+
+      puts "LogDemoTask: this is another puts line. DONE."
+    end
+end
+
 
 class CreateSampleFileTask < Vineyard::Task
    def do_work
