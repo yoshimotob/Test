@@ -8,7 +8,7 @@ task.impl = {:repo => "git@github.com:yoshimotob/Test.git",
              :dir => "demo"}
 task.init_data = {:key1 => :val1}
 
-Q = Vineyard::Queue.new(:my_test_resource, {:host => "localhost", :port => 8080} )
+Q = Vineyard::Queue.new(:my_demo_resource, {:host => "localhost", :port => 8080} )
 id = Q.push(task)
 puts "Pushed LogDemoTask, id: #{id}"
 

@@ -5,6 +5,7 @@ class LogDemoTask < Vineyard::Task
 
     def do_work
       puts "LogDemoTask [master]: this is a puts line. STARTING..."
+      sleep 60*20
       puts "Start test 2"
       log << "LogDemoTask [master]: this is a log line"
       heartbeat
