@@ -13,7 +13,7 @@ class LogDemoTask < Vineyard::Task
       warn "LogDemoTask: this is a warn line"
 
       10.times do |i|
-        sleep 3
+        sleep 60
         log << "LogDemoTask v14-master: log loop # #{i}"
         heartbeat
       end
